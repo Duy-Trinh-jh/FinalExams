@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #123456;
+  --secondary-color: #ffffff;
+  --correct-color: #00FF00;
+  --incorrect-color: #FF0000;
+  --container-margin: 10px; 
+  --container-padding: 10px;
+}
+
+body {
+  margin: auto;
+}
+
+.header {
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Form question */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  margin: var(--container-margin);
+}
+
+.essay-question input[type="text"] {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+}
+
+.choice input[type="radio"] {
+  margin-right: 5px;
+}
+
+.choice input.correct + label {
+  font-weight: bold;
+  color: var(--correct-color);
+}
+
+.choice input.incorrect + label {
+  font-weight: bold;
+  color: var(--incorrect-color);
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--container-padding);
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  z-index: 2;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.side-menu button {
+  width: 100px;
+  padding: var(--container-padding);
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  text-align: center;
+}
+
+.side-menu button:hover {
+  cursor: pointer;
+}
+
+.timer {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.question-state {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 20px;
+  max-width: 250px;
+}
+
+.question-state .state {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.state p {
+  width: 15px;
+}
+
+.state .tick {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  text-align: center;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+#score {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .side-menu {
+    top: 100px;
+    bottom: unset;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    margin: 0 10px;
+    border-radius: 10px;
+  }
+}

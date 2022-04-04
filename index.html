@@ -7,8 +7,23 @@
   <link rel="stylesheet" href="styles.css">
   <title>Document</title>
 </head>
-<body>
-  
+<body onload="handleReload()">
+  <header class="header">
+    <div class="title">Random Question</div> 
+  </header>
+  <section class="container">
+    <div class="wrapper-question"></div>
+    <div class="side-menu">
+      <div class="timer">
+        00:00:00
+      </div>
+      <div id="score"></div>
+      <div class="question-state"></div>
+      <button id="control-button" class="title">
+        Start
+      </button>
+    </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
